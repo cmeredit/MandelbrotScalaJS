@@ -733,8 +733,21 @@ const $s_Ltutorial_webapp_TutorialApp__main__AT__V = (function(args) {
   $m_Ltutorial_webapp_TutorialApp$().main__AT__V(args)
 });
 class $c_Ltutorial_webapp_TutorialApp$ extends $c_O {
+  constructor() {
+    super();
+    this.Ltutorial_webapp_TutorialApp$__f_randGen = null;
+    $n_Ltutorial_webapp_TutorialApp$ = this;
+    this.Ltutorial_webapp_TutorialApp$__f_randGen = $m_s_util_Random$();
+    const this$3 = this.Ltutorial_webapp_TutorialApp$__f_randGen;
+    const this$2 = $m_RTLong$();
+    const value = $uD(new Date().getTime());
+    const lo = this$2.org$scalajs$linker$runtime$RuntimeLong$$fromDoubleImpl__D__I(value);
+    const hi = this$2.RTLong$__f_org$scalajs$linker$runtime$RuntimeLong$$hiReturn;
+    this$3.s_util_Random__f_self.setSeed__J__V(new $c_RTLong(lo, hi))
+  };
   main__AT__V(args) {
     $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().addEventListener("DOMContentLoaded", ((arg1$2) => {
+      $m_Ltutorial_webapp_TutorialApp$();
       $m_Ltutorial_webapp_TutorialApp$().setupUI__V()
     }))
   };
@@ -746,29 +759,52 @@ class $c_Ltutorial_webapp_TutorialApp$ extends $c_O {
   addClickedMessage__V() {
     this.appendPar__Lorg_scalajs_dom_raw_Node__T__V($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body, "You clicked the button!")
   };
+  getRandomColorHexString__T() {
+    const this$1 = this.Ltutorial_webapp_TutorialApp$__f_randGen;
+    const x = $doubleToInt((255.0 * this$1.s_util_Random__f_self.nextDouble__D()));
+    const this$5 = $as_T($uD((x >>> 0)).toString(16));
+    const r = $as_T(this$5.toUpperCase());
+    const this$6 = this.Ltutorial_webapp_TutorialApp$__f_randGen;
+    const x$1 = $doubleToInt((255.0 * this$6.s_util_Random__f_self.nextDouble__D()));
+    const this$10 = $as_T($uD((x$1 >>> 0)).toString(16));
+    const g = $as_T(this$10.toUpperCase());
+    const this$11 = this.Ltutorial_webapp_TutorialApp$__f_randGen;
+    const x$2 = $doubleToInt((255.0 * this$11.s_util_Random__f_self.nextDouble__D()));
+    const this$15 = $as_T($uD((x$2 >>> 0)).toString(16));
+    const b = $as_T(this$15.toUpperCase());
+    return ((("#" + r) + g) + b)
+  };
+  draw__V() {
+    const $$x1 = $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx;
+    const s = this.getRandomColorHexString__T();
+    $$x1.fillStyle = s;
+    $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx.fillRect(0.0, 0.0, $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth, $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth);
+    const $$x2 = $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx;
+    const s$1 = this.getRandomColorHexString__T();
+    $$x2.strokeStyle = s$1;
+    $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx.beginPath();
+    $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx.moveTo((($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth / 3) | 0), 0.0);
+    $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx.lineTo((($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth / 3) | 0), (($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth / 3) | 0));
+    $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx.moveTo(((($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth << 1) / 3) | 0), 0.0);
+    $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx.lineTo(((($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth << 1) / 3) | 0), (($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth / 3) | 0));
+    $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx.moveTo($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth, (($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth / 2) | 0));
+    $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx.arc((($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth / 2) | 0), (($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth / 2) | 0), (($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth / 2) | 0), 0.0, 3.14159);
+    $m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_ctx.stroke()
+  };
   setupUI__V() {
     const button = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("button");
     button.textContent = "Click me!";
     button.addEventListener("click", ((arg1$2) => {
-      $m_Ltutorial_webapp_TutorialApp$().addClickedMessage__V()
+      $m_Ltutorial_webapp_TutorialApp$().tutorial$webapp$TutorialApp$$$anonfun$setupUI$1__Lorg_scalajs_dom_raw_MouseEvent__V(arg1$2)
     }));
     $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body.appendChild(button);
-    this.appendPar__Lorg_scalajs_dom_raw_Node__T__V($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body, "Hello World");
-    const c = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("canvas");
-    const ctx = c.getContext("2d");
-    c.width = 300;
-    c.height = 300;
-    ctx.strokeStyle = "blue";
-    ctx.lineWidth = 3.0;
-    ctx.beginPath();
-    ctx.moveTo(100.0, 0.0);
-    ctx.lineTo(100.0, 100.0);
-    ctx.moveTo(200.0, 0.0);
-    ctx.lineTo(200.0, 100.0);
-    ctx.moveTo(300.0, 150.0);
-    ctx.arc(150.0, 150.0, 150.0, 0.0, 3.14159);
-    ctx.stroke();
-    $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body.appendChild(c)
+    this.appendPar__Lorg_scalajs_dom_raw_Node__T__V($m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body, "Hello, Alexus!");
+    this.draw__V();
+    $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().body.appendChild($m_Ltutorial_webapp_TutorialApp$Components$().Ltutorial_webapp_TutorialApp$Components$__f_mainCanvas)
+  };
+  tutorial$webapp$TutorialApp$$$anonfun$setupUI$1__Lorg_scalajs_dom_raw_MouseEvent__V(e) {
+    $m_Ltutorial_webapp_TutorialApp$().addClickedMessage__V();
+    $m_Ltutorial_webapp_TutorialApp$().draw__V()
   };
 }
 const $d_Ltutorial_webapp_TutorialApp$ = new $TypeData().initClass({
@@ -784,6 +820,36 @@ function $m_Ltutorial_webapp_TutorialApp$() {
     $n_Ltutorial_webapp_TutorialApp$ = new $c_Ltutorial_webapp_TutorialApp$()
   };
   return $n_Ltutorial_webapp_TutorialApp$
+}
+class $c_Ltutorial_webapp_TutorialApp$Components$ extends $c_O {
+  constructor() {
+    super();
+    this.Ltutorial_webapp_TutorialApp$Components$__f_mainCanvas = null;
+    this.Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth = 0;
+    this.Ltutorial_webapp_TutorialApp$Components$__f_ctx = null;
+    $n_Ltutorial_webapp_TutorialApp$Components$ = this;
+    this.Ltutorial_webapp_TutorialApp$Components$__f_mainCanvas = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("canvas");
+    this.Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth = 300;
+    this.Ltutorial_webapp_TutorialApp$Components$__f_mainCanvas.width = this.Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth;
+    this.Ltutorial_webapp_TutorialApp$Components$__f_mainCanvas.height = this.Ltutorial_webapp_TutorialApp$Components$__f_mainCanvasWidth;
+    this.Ltutorial_webapp_TutorialApp$Components$__f_ctx = this.Ltutorial_webapp_TutorialApp$Components$__f_mainCanvas.getContext("2d");
+    this.Ltutorial_webapp_TutorialApp$Components$__f_ctx.strokeStyle = "blue";
+    this.Ltutorial_webapp_TutorialApp$Components$__f_ctx.lineWidth = 3.0
+  };
+}
+const $d_Ltutorial_webapp_TutorialApp$Components$ = new $TypeData().initClass({
+  Ltutorial_webapp_TutorialApp$Components$: 0
+}, false, "tutorial.webapp.TutorialApp$Components$", {
+  Ltutorial_webapp_TutorialApp$Components$: 1,
+  O: 1
+});
+$c_Ltutorial_webapp_TutorialApp$Components$.prototype.$classData = $d_Ltutorial_webapp_TutorialApp$Components$;
+let $n_Ltutorial_webapp_TutorialApp$Components$ = (void 0);
+function $m_Ltutorial_webapp_TutorialApp$Components$() {
+  if ((!$n_Ltutorial_webapp_TutorialApp$Components$)) {
+    $n_Ltutorial_webapp_TutorialApp$Components$ = new $c_Ltutorial_webapp_TutorialApp$Components$()
+  };
+  return $n_Ltutorial_webapp_TutorialApp$Components$
 }
 class $c_jl_Number extends $c_O {
 }
@@ -808,6 +874,9 @@ class $c_jl_Throwable extends Error {
     this.jl_Throwable__f_stackTrace = null;
     this.jl_Throwable__f_suppressed = null
   };
+  getMessage__T() {
+    return this.jl_Throwable__f_s
+  };
   fillInStackTrace__jl_Throwable() {
     const identifyingString = Object.prototype.toString.call(this);
     if ((identifyingString === "[object Error]")) {
@@ -823,7 +892,7 @@ class $c_jl_Throwable extends Error {
   };
   toString__T() {
     const className = $objectClassName(this);
-    const message = this.jl_Throwable__f_s;
+    const message = this.getMessage__T();
     return ((message === null) ? className : ((className + ": ") + message))
   };
   $js$exported$meth$toString__O() {
@@ -833,7 +902,7 @@ class $c_jl_Throwable extends Error {
     return $objectClassName(this)
   };
   $js$exported$prop$message__O() {
-    const m = this.jl_Throwable__f_s;
+    const m = this.getMessage__T();
     return ((m === null) ? "" : m)
   };
   hashCode__I() {
@@ -848,6 +917,83 @@ class $c_jl_Throwable extends Error {
   "toString"() {
     return this.$js$exported$meth$toString__O()
   };
+}
+const $ct_ju_Random__J__ = (function($thiz, seed_in) {
+  $thiz.ju_Random__f_haveNextNextGaussian = false;
+  $thiz.setSeed__J__V(seed_in);
+  return $thiz
+});
+const $ct_ju_Random__ = (function($thiz) {
+  $ct_ju_Random__J__($thiz, $m_ju_Random$().java$util$Random$$randomSeed__J());
+  return $thiz
+});
+class $c_ju_Random extends $c_O {
+  constructor() {
+    super();
+    this.ju_Random__f_seedHi = 0;
+    this.ju_Random__f_seedLo = 0;
+    this.ju_Random__f_nextNextGaussian = 0.0;
+    this.ju_Random__f_haveNextNextGaussian = false
+  };
+  setSeed__J__V(seed_in) {
+    const lo = ((-554899859) ^ seed_in.RTLong__f_lo);
+    const hi = (5 ^ seed_in.RTLong__f_hi);
+    const hi$1 = (65535 & hi);
+    const lo$1 = (((lo >>> 24) | 0) | (hi$1 << 8));
+    this.ju_Random__f_seedHi = lo$1;
+    this.ju_Random__f_seedLo = (16777215 & lo);
+    this.ju_Random__f_haveNextNextGaussian = false
+  };
+  next__I__I(bits) {
+    const oldSeedHi = this.ju_Random__f_seedHi;
+    const oldSeedLo = this.ju_Random__f_seedLo;
+    const loProd = ((1.5525485E7 * oldSeedLo) + 11.0);
+    const hiProd = ((1502.0 * oldSeedLo) + (1.5525485E7 * oldSeedHi));
+    const x = (loProd / 1.6777216E7);
+    const newSeedHi = (16777215 & (($uI((x | 0)) + (16777215 & $uI((hiProd | 0)))) | 0));
+    const newSeedLo = (16777215 & $uI((loProd | 0)));
+    this.ju_Random__f_seedHi = newSeedHi;
+    this.ju_Random__f_seedLo = newSeedLo;
+    const result32 = ((newSeedHi << 8) | (newSeedLo >> 16));
+    return ((result32 >>> ((32 - bits) | 0)) | 0)
+  };
+  nextDouble__D() {
+    return (((1.34217728E8 * this.next__I__I(26)) + this.next__I__I(27)) / 9.007199254740992E15)
+  };
+}
+const $d_ju_Random = new $TypeData().initClass({
+  ju_Random: 0
+}, false, "java.util.Random", {
+  ju_Random: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_ju_Random.prototype.$classData = $d_ju_Random;
+const $p_ju_Random$__randomInt__I = (function($thiz) {
+  const a = (4.294967296E9 * $uD(Math.random()));
+  return $doubleToInt(($uD(Math.floor(a)) - 2.147483648E9))
+});
+class $c_ju_Random$ extends $c_O {
+  java$util$Random$$randomSeed__J() {
+    const value = $p_ju_Random$__randomInt__I(this);
+    const value$1 = $p_ju_Random$__randomInt__I(this);
+    return new $c_RTLong(value$1, value)
+  };
+}
+const $d_ju_Random$ = new $TypeData().initClass({
+  ju_Random$: 0
+}, false, "java.util.Random$", {
+  ju_Random$: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_ju_Random$.prototype.$classData = $d_ju_Random$;
+let $n_ju_Random$ = (void 0);
+function $m_ju_Random$() {
+  if ((!$n_ju_Random$)) {
+    $n_ju_Random$ = new $c_ju_Random$()
+  };
+  return $n_ju_Random$
 }
 const $p_RTLong$__toUnsignedString__I__I__T = (function($thiz, lo, hi) {
   if ((((-2097152) & hi) === 0)) {
@@ -1169,6 +1315,16 @@ function $m_RTLong$() {
   };
   return $n_RTLong$
 }
+const $ct_s_util_Random__ju_Random__ = (function($thiz, self) {
+  $thiz.s_util_Random__f_self = self;
+  return $thiz
+});
+class $c_s_util_Random extends $c_O {
+  constructor() {
+    super();
+    this.s_util_Random__f_self = null
+  };
+}
 function $f_jl_Boolean__hashCode__I($thiz) {
   return ($uZ($thiz) ? 1231 : 1237)
 }
@@ -1202,6 +1358,28 @@ const $d_jl_Character = new $TypeData().initClass({
 class $c_jl_Error extends $c_jl_Throwable {
 }
 class $c_jl_Exception extends $c_jl_Throwable {
+}
+class $c_s_util_Random$ extends $c_s_util_Random {
+  constructor() {
+    super();
+    $ct_s_util_Random__ju_Random__(this, $ct_ju_Random__(new $c_ju_Random()))
+  };
+}
+const $d_s_util_Random$ = new $TypeData().initClass({
+  s_util_Random$: 0
+}, false, "scala.util.Random$", {
+  s_util_Random$: 1,
+  s_util_Random: 1,
+  O: 1,
+  Ljava_io_Serializable: 1
+});
+$c_s_util_Random$.prototype.$classData = $d_s_util_Random$;
+let $n_s_util_Random$ = (void 0);
+function $m_s_util_Random$() {
+  if ((!$n_s_util_Random$)) {
+    $n_s_util_Random$ = new $c_s_util_Random$()
+  };
+  return $n_s_util_Random$
 }
 function $f_jl_Byte__hashCode__I($thiz) {
   return $uB($thiz)
