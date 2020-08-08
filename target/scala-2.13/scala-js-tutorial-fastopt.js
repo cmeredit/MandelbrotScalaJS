@@ -729,6 +729,27 @@ function $m_Lorg_scalajs_dom_package$() {
   };
   return $n_Lorg_scalajs_dom_package$
 }
+class $c_sjs_js_timers_package$ extends $c_O {
+  setInterval__D__F0__sjs_js_timers_SetIntervalHandle(interval, body) {
+    return setInterval(((body$3) => (() => {
+      body$3.apply__O()
+    }))(body), interval)
+  };
+}
+const $d_sjs_js_timers_package$ = new $TypeData().initClass({
+  sjs_js_timers_package$: 0
+}, false, "scala.scalajs.js.timers.package$", {
+  sjs_js_timers_package$: 1,
+  O: 1
+});
+$c_sjs_js_timers_package$.prototype.$classData = $d_sjs_js_timers_package$;
+let $n_sjs_js_timers_package$ = (void 0);
+function $m_sjs_js_timers_package$() {
+  if ((!$n_sjs_js_timers_package$)) {
+    $n_sjs_js_timers_package$ = new $c_sjs_js_timers_package$()
+  };
+  return $n_sjs_js_timers_package$
+}
 const $s_Ltutorial_webapp_TutorialApp__main__AT__V = (function(args) {
   $m_Ltutorial_webapp_TutorialApp$().main__AT__V(args)
 });
@@ -749,7 +770,10 @@ class $c_Ltutorial_webapp_TutorialApp$ extends $c_O {
     $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().addEventListener("DOMContentLoaded", ((arg1$2) => {
       $m_Ltutorial_webapp_TutorialApp$();
       $m_Ltutorial_webapp_TutorialApp$().setupUI__V()
-    }))
+    }));
+    $m_sjs_js_timers_package$().setInterval__D__F0__sjs_js_timers_SetIntervalHandle(16.666666666666668, new $c_sjsr_AnonFunction0(((this$2) => (() => {
+      $m_Ltutorial_webapp_TutorialApp$().draw__V()
+    }))(this)))
   };
   appendPar__Lorg_scalajs_dom_raw_Node__T__V(targetNode, text) {
     const parNode = $m_Lorg_scalajs_dom_package$().document__Lorg_scalajs_dom_raw_HTMLDocument().createElement("p");
@@ -1315,6 +1339,11 @@ function $m_RTLong$() {
   };
   return $n_RTLong$
 }
+class $c_sr_AbstractFunction0 extends $c_O {
+  toString__T() {
+    return "<function0>"
+  };
+}
 const $ct_s_util_Random__ju_Random__ = (function($thiz, self) {
   $thiz.s_util_Random__f_self = self;
   return $thiz
@@ -1359,6 +1388,25 @@ class $c_jl_Error extends $c_jl_Throwable {
 }
 class $c_jl_Exception extends $c_jl_Throwable {
 }
+class $c_sjsr_AnonFunction0 extends $c_sr_AbstractFunction0 {
+  constructor(f) {
+    super();
+    this.sjsr_AnonFunction0__f_f = null;
+    this.sjsr_AnonFunction0__f_f = f
+  };
+  apply__O() {
+    return (0, this.sjsr_AnonFunction0__f_f)()
+  };
+}
+const $d_sjsr_AnonFunction0 = new $TypeData().initClass({
+  sjsr_AnonFunction0: 0
+}, false, "scala.scalajs.runtime.AnonFunction0", {
+  sjsr_AnonFunction0: 1,
+  sr_AbstractFunction0: 1,
+  O: 1,
+  F0: 1
+});
+$c_sjsr_AnonFunction0.prototype.$classData = $d_sjsr_AnonFunction0;
 class $c_s_util_Random$ extends $c_s_util_Random {
   constructor() {
     super();
